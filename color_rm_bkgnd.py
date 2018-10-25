@@ -5,7 +5,8 @@ import os
 
 def rm_background(DATA_DIR):
     for filename in os.listdir(DATA_DIR):
-        img  = cv2.imread(filename)
+        path = DATA_DIR+'/'+str(filename) #set the picture directory
+        img  = cv2.imread(path)
         #img=cv2.resize(img,None,fx=0.5,fy=0.5)
         rows,cols,channels = img.shape
         #转换hsv
