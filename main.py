@@ -17,6 +17,21 @@ if type == '1':
 else:
     label_type = False
 
+# create folder for data augmentation
+def createFolder(directory):
+    try:
+        if not os.path.exists(directory):
+            os.makedirs(directory)
+    except OSError:
+        print ('Error: Creating directory. ' +  directory)
+
+createFolder('./result/cut')
+createFolder('./result/cut_after_rotate')
+createFolder('./result/label')
+createFolder('./result/rm_bkgnd')
+createFolder('./result/rotate')
+
+
 # cut_and_label(String DATA_DIR, Boolean label_or_not, String STORE_DIR, Boolean GOOD, Boolean flip)
 cut_and_label(location, False, "./result/cut", label_type, False)
 
