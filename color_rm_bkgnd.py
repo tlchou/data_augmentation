@@ -27,7 +27,10 @@ def rm_background(DATA_DIR):
             for j in range(cols):
                 if dilate[i,j]==255:
                     img[i,j]=(0,0,0)#此处替换颜色，为BGR通道
+
+        new_im = np.zeros((150,150,3))
+        new_im[0:0+x,0:y] = img
         #cv2.imshow('res',img)
-        cv2.imwrite('./result/rm_bkgnd/' + os.path.basename(filename), img)
+        cv2.imwrite('./result/rm_bkgnd/' + os.path.basename(filename), new_im)
     #    cv2.waitKey(10000)
     #    cv2.destroyAllWindows()
