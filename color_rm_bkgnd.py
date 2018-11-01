@@ -4,6 +4,25 @@ import os
 
 
 def rm_background(DATA_DIR):
+    max_H = 0
+    max_L = 0
+    square_size = 0
+    for filename in os.listdir(DATA_DIR):
+        path = DATA_DIR+'/'+str(filename) #set the picture directory
+        img  = cv2.imread(path)
+        sp = img.shape
+        height = sp[0]
+        length = sp[1]
+        if height>max_H:
+            max_H = height
+        if length>max_L:
+            max_L = length
+            
+    if max_L>max_H:
+        square_size = max_L
+    else:
+        square_size = max_H
+
     for filename in os.listdir(DATA_DIR):
         path = DATA_DIR+'/'+str(filename) #set the picture directory
         img  = cv2.imread(path)
@@ -28,8 +47,8 @@ def rm_background(DATA_DIR):
                 if dilate[i,j]==255:
                     img[i,j]=(0,0,0)#此处替换颜色，为BGR通道
 
-        new_im = np.zeros((150,150,3))
-        new_im[0:0+x,0:y] = img
+        new_im = np.zeros((square_size,square_size,3))
+        new_im[0:rows,0:cols] = img
         #cv2.imshow('res',img)
         cv2.imwrite('./result/rm_bkgnd/' + os.path.basename(filename), new_im)
     #    cv2.waitKey(10000)
