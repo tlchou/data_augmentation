@@ -31,6 +31,7 @@ createFolder('./result/cut_after_rotate')
 createFolder('./result/label')
 createFolder('./result/rm_bkgnd')
 createFolder('./result/rotate')
+createFolder('./result/train_data')
 
 
 # cut_and_label(String DATA_DIR, Boolean label_or_not, String STORE_DIR, Boolean GOOD, Boolean flip)
