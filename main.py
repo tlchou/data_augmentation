@@ -4,6 +4,7 @@ from hotelscombine import cut_and_label
 # from rm_background4 import rm_background
 from color_rm_bkgnd import rm_background
 from just_rotate import just_rotate
+from resize import resize
 location = "./augmentation"
 
 type = input('If data in '+str(location)+' are good, please type 1; if bad, please type 2 : ')
@@ -42,3 +43,4 @@ rm_background("./result/cut")
 just_rotate("./result/rm_bkgnd")
 
 cut_and_label("./result/rotate", True, "./result/cut_after_rotate", label_type, True)
+resize("./result/cut_after_rotate")

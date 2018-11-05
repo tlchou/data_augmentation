@@ -1,4 +1,4 @@
-import os 
+import os
 import cv2
 import numpy as np
 from flip_and_label import flip_image
@@ -27,9 +27,9 @@ def cut_and_label(DATA_DIR,label,STORE_DIR,GOOD,flip):
         coffee_type = "good"
     else:
         coffee_type = "bad"
-    
+
     num = 0
-    
+
     for filename in os.listdir(DATA_DIR):
         # if filename[len(filename)-1] != 'g':
         #     continue
@@ -42,8 +42,8 @@ def cut_and_label(DATA_DIR,label,STORE_DIR,GOOD,flip):
         #file_name_jpg = file_name+".jpg"
         path = DATA_DIR+'/'+str(filename) #set the picture directory
         print(path)
-        #img = cv2.pyrDown(cv2.imread(path, cv2.IMREAD_UNCHANGED))
-        img = cv2.imread(path)
+        img = cv2.pyrDown(cv2.imread(path, cv2.IMREAD_UNCHANGED))
+        # img = cv2.imread(path)
 
 
         # threshold image
@@ -119,4 +119,3 @@ def cut_and_label(DATA_DIR,label,STORE_DIR,GOOD,flip):
     '''
         #cv2.waitKey(0)
         #cv2.destroyAllWindows()
-        
