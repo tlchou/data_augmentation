@@ -1,5 +1,6 @@
 import os
 import cv2
+import shutil
 from hotelscombine import cut_and_label
 # from rm_background4 import rm_background
 from color_rm_bkgnd import rm_background
@@ -26,6 +27,8 @@ def createFolder(directory):
     except OSError:
         print ('Error: Creating directory. ' +  directory)
 
+shutil.rmtree('./result')
+createFolder('./result')
 createFolder('./result/cut')
 createFolder('./result/cut_after_rotate')
 createFolder('./result/label')

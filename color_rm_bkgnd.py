@@ -17,8 +17,8 @@ def rm_background(DATA_DIR):
             max_H = height
         if length>max_L:
             max_L = length
-            
-    if max_L>max_H:
+
+    if max_L > max_H:
         square_size = max_L
     else:
         square_size = max_H

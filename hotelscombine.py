@@ -42,8 +42,8 @@ def cut_and_label(DATA_DIR,label,STORE_DIR,GOOD,flip):
         #file_name_jpg = file_name+".jpg"
         path = DATA_DIR+'/'+str(filename) #set the picture directory
         print(path)
-        img = cv2.pyrDown(cv2.imread(path, cv2.IMREAD_UNCHANGED))
-        # img = cv2.imread(path)
+        # img = cv2.pyrDown(cv2.imread(path, cv2.IMREAD_UNCHANGED))
+        img = cv2.imread(path)
 
 
         # threshold image
