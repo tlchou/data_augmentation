@@ -3,7 +3,7 @@ import numpy as np
 import os
 
 
-def resize(DATA_DIR):
+def resize(DATA_DIR,STORE_DIR):
     max_H = 0
     max_L = 0
     square_size = 0
@@ -30,8 +30,9 @@ def resize(DATA_DIR):
         #img=cv2.resize(img,None,fx=0.5,fy=0.5)
         new_im = np.zeros((square_size,square_size,3))
         new_im[0:rows,0:cols] = img
-        resized_image = cv2.resize(new_im, (180, 180)) # fix the image size 
+        resized_image = cv2.resize(new_im, (180, 180)) # fix the image size
         #cv2.imshow('res',img)
-        cv2.imwrite('./result/train_data/' + os.path.basename(filename), resized_image)
+        # cv2.imwrite(STORE_DIR+"/"+store_name,img[y:y+h,x:x+w,:])
+        cv2.imwrite(STORE_DIR+ "/" + os.path.basename(filename), resized_image)
     #    cv2.waitKey(10000)
     #    cv2.destroyAllWindows()
