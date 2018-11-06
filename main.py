@@ -27,6 +27,7 @@ store_B = "./result/train_data/bad_train"
 #     store_train = store_B
 
 # create folder for data augmentation
+
 def createFolder(directory):
     try:
         if not os.path.exists(directory):
@@ -46,6 +47,7 @@ createFolder('./result/rotate')
 createFolder('./result/train_data/good_train')
 createFolder('./result/train_data/bad_train')
 
+# --------- Deal with Good bean --------- #
 # cut_and_label(String DATA_DIR, Boolean label_or_not, String STORE_DIR, Boolean GOOD, Boolean flip)
 cut_and_label(location_A, False, "./result/cut", True, False)
 # rm_background(String DATA_DIR)
@@ -68,6 +70,7 @@ createFolder('./result/label')
 createFolder('./result/rm_bkgnd')
 createFolder('./result/rotate')
 
+# --------- Deal with Bad bean --------- #
 # cut_and_label(String DATA_DIR, Boolean label_or_not, String STORE_DIR, Boolean GOOD, Boolean flip)
 cut_and_label(location_B, False, "./result/cut", False, False)
 # rm_background(String DATA_DIR)
