@@ -2,6 +2,7 @@
 Including remove background of images, rotate images and flip images.
 
 ## Installation
+'OpenCV-Version' : '3.4.2.17'
 ```bash 
 pip install opencv-python
 ```
