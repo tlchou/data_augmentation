@@ -47,7 +47,7 @@ def cut_and_label(DATA_DIR,label,STORE_DIR,GOOD,flip):
 
 
         # threshold image
-        ret, threshed_img = cv2.threshold(cv2.cvtColor(img, cv2.COLOR_BGR2GRAY),64, 255, cv2.THRESH_BINARY)#ori=127
+        ret, threshed_img = cv2.threshold(cv2.cvtColor(img, cv2.COLOR_BGR2GRAY),4, 255, cv2.THRESH_BINARY)#ori=127
         # find contours and get the external one
         image, contours, hier = cv2.findContours(threshed_img, cv2.RETR_TREE,cv2.CHAIN_APPROX_SIMPLE)
 
@@ -59,7 +59,7 @@ def cut_and_label(DATA_DIR,label,STORE_DIR,GOOD,flip):
             # get the bounding rect
             x, y, w, h = cv2.boundingRect(c)
             # draw a green rectangle to visualize the bounding rect
-            if h > 120 and w>120:
+            if h > 60 and w > 60:
                 #cv2.rectangle(img, (x, y), (x+w, y+h), (0, 255, 0), 1)
                 #cv2.rectangle(img, (x, y), (x+w, y+h), (0, 255, 0), 1)
                 print("x = "+str(x)+", y = "+str(y)+", w = "+str(w)+", h = "+str(h)+"\n")

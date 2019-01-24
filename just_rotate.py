@@ -27,10 +27,10 @@ def rotate_bound(image, angle):
 
 def just_rotate(DATA_DIR):
     for filename in os.listdir(DATA_DIR):
-        x=30
+        x = 40
         img = cv2.imread(str(DATA_DIR)+'/'+str(filename))
-        
-        while(x<360):
+
+        while(x <= 360):
             rotated = rotate_bound(img, x)
             #cv2.imshow('a',rotated)
             #cv2.imshow('rotated:'+ str( i * 15 ), rotated)                                   # Display
@@ -40,4 +40,4 @@ def just_rotate(DATA_DIR):
             filename_len = len(filename)
             filename_without_jpg = filename[0:filename_len-4]
             cv2.imwrite('./result/rotate/' + str(filename_without_jpg) + '_' + str(x) + ".jpg", rotated)
-            x = x + 30
+            x = x + 40
