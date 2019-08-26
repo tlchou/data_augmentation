@@ -46,18 +46,20 @@ for key in cam_props:
 ### also remember to change the device number if necessary
 cap = cv2.VideoCapture(0)
 
+### set the resolution of camera
 cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1920)
 cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 1080)
+
 img_count = 0
 while(True):
   ret, frame = cap.read()
   cv2.imshow('frame', frame)
   key = cv2.waitKey(1) & 0xFF
-  if key == ord('q'):
+  if key == ord('q'): ### When key `q` stop to capture.
     break
-  if key == ord('w'):
-    cv2.imwrite("bangbang/{}.jpg".format(img_count),frame)
-    img_count = img_count + 1
+  if key == ord('w'): ### When key `w` start to write image.
+    cv2.imwrite("bangbang/{}.jpg".format(img_count),frame) ### write the image to the path.
+    img_count = img_count + 1 
     print("image save")
 
 cap.release()
