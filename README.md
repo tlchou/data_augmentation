@@ -29,8 +29,8 @@ Two type of image 'good', 'bad' coffee bean
 ![](https://github.com/tlchou/data_augmentation/blob/master/augmentation/good/1.bmp)
 ### Bad bean example
 ![](https://github.com/tlchou/data_augmentation/blob/master/augmentation/bad/1.bmp)
-### Data path of server
-## Good Image 
+## Data path of server
+### Good Image 
 /home/hsnl-iot/Desktop/data_augmentation/augmentation/good
-## Bad Image
+### Bad Image
 /home/hsnl-iot/Desktop/data_augmentation/augmentation/bad
